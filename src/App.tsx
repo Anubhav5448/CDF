@@ -5,6 +5,7 @@ import About from './components/About';
 import Services from './components/Services';
 import ProjectShowcase from './components/ProjectShowcase';
 import Gallery from './components/Gallery';
+import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ProjectModal from './components/ProjectModal';
@@ -38,6 +39,7 @@ function App() {
       <Services />
       <ProjectShowcase onViewProject={handleViewProject} />
       <Gallery />
+      <Testimonials />
       <Contact />
       <Footer />
       
