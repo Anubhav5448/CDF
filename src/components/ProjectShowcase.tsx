@@ -1,6 +1,11 @@
 import React from 'react';
+import { projects } from '../data/projects';
 
-const ProjectShowcase: React.FC = () => {
+interface ProjectShowcaseProps {
+  onViewProject: (projectId: string) => void;
+}
+
+const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({ onViewProject }) => {
   const projectDetails = [
     { label: 'Living Room', area: '24 m²' },
     { label: 'Dining Room', area: '18 m²' },
@@ -38,7 +43,10 @@ const ProjectShowcase: React.FC = () => {
               </div>
             </div>
 
-            <button className="bg-amber-400 text-slate-900 px-8 py-3 rounded-lg hover:bg-amber-300 transition-colors duration-200 font-medium">
+            <button 
+              onClick={() => onViewProject(projects.showcase.id)}
+              className="bg-amber-400 text-slate-900 px-8 py-3 rounded-lg hover:bg-amber-300 transition-colors duration-200 font-medium"
+            >
               VIEW FULL PROJECT
             </button>
           </div>

@@ -1,6 +1,11 @@
 import React from 'react';
+import { projects } from '../data/projects';
 
-const Hero: React.FC = () => {
+interface HeroProps {
+  onViewProject: (projectId: string) => void;
+}
+
+const Hero: React.FC<HeroProps> = ({ onViewProject }) => {
   return (
     <section id="home" className="min-h-screen bg-slate-800 relative overflow-hidden">
       <div className="absolute inset-0">
@@ -48,7 +53,10 @@ const Hero: React.FC = () => {
                 Award-winning residential design combining minimalist aesthetics with 
                 functional luxury. Featuring sustainable materials and innovative space planning.
               </p>
-              <button className="text-amber-400 hover:text-amber-300 transition-colors duration-200 text-sm font-light tracking-wider">
+              <button 
+                onClick={() => onViewProject(projects.featured.id)}
+                className="text-amber-400 hover:text-amber-300 transition-colors duration-200 text-sm font-light tracking-wider"
+              >
                 VIEW PROJECT →
               </button>
             </div>
